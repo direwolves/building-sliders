@@ -10,13 +10,23 @@ $(document).ready(function(){
 	doSlides = function(){
 		// hide the current slide
 		$('img').eq(currentSlideIndex).hide();
+		
 		// increase the currentSlideIndex by 1
-		currentSlideIndex = currentSlideIndex + 1;
-		console.log(currentSlideIndex);
+		// only IF you're not on your last slide
+		if (currentSlideIndex < slideCount - 1){
+			currentSlideIndex = currentSlideIndex + 1;
+		} else {
+			currentSlideIndex = 0;
+		}
+
 		// show the currentSlideIndex
 		$('img').eq(currentSlideIndex).show();
 		console.log('currentSlideIndex set to ' + currentSlideIndex);
 	};
+
+	$('.js-next').on('click', function(){
+		doSlides();
+	});
 
 
 
