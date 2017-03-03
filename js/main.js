@@ -7,5 +7,17 @@ $(document).ready(function(){
 	// the number of images in our slideshow
 	var slideCount = $('img').length;
 
+	doSlides = function(){
+		// hide the current slide
+		$('img').eq(currentSlideIndex).hide();
+		// increase the currentSlideIndex by 1
+		currentSlideIndex = currentSlideIndex + 1;
+		console.log(currentSlideIndex);
+		// show the currentSlideIndex
+		$('img').eq(currentSlideIndex).show();
+		console.log('currentSlideIndex set to ' + currentSlideIndex);
+	};
+
+
 
 }); // closes doc.ready
